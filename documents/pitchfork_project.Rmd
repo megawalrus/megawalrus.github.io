@@ -9,7 +9,13 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## Introduction
+
+Reviewers exert great influence on the consumption of contemporary popular music. For example, the 'Pitchfork effect' -- named after the [hugely popular online music magazine](http://pitchfork.com) -- refers to the tendency for sales to increase immediately after acclaim by a well-known reviewer. Therefore, it is worthwhile to understand, in-depth, any potential trends and biases in critical opinion. Recently, an [SQL database was compiled](https://github.com/nsgrantham/pitchfork-reviews), containing over 17,000 music reviews published by Pitchfork between 1999 and 2016. This dataset offered a unique opportunity to study differences in critical opinion, both as a function of time and of different individual reviewers. However, no information about musical genre was included, which could be highly informative with respect to highlighting more overarching trends and/or biases in reviews. To this end, I began updating the 'Pitchfork database' by adding genre labels for each review, to allow for some additional analyses.
+
+## Updating the Pitchfork database
+
+Genre-tagging will be achieved via a combination of web scraping and manual coding. The resulting information will be analysed in-depth and visualised, in order to discern any reviewing biases that might be present, as well as investigating wider cultural changes in music preference over time. The findings will also be discussed in relation to concurrent data about music consumption habits.
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
