@@ -15,20 +15,28 @@ Reviewers exert great influence on the consumption of contemporary popular music
 
 ## Updating the Pitchfork database
 
-Genre-tagging will be achieved via a combination of web scraping and manual coding. The resulting information will be analysed in-depth and visualised, in order to discern any reviewing biases that might be present, as well as investigating wider cultural changes in music preference over time. The findings will also be discussed in relation to concurrent data about music consumption habits.
+### Step 1
+Initially, (and somewhat naively), I built a web scraper with `Python`, to search for each album's genre online and download the result. While this did help provide a 'first guess' at the genre, the approach was fraught with errors, and lots of albums were too obscure to be found using this method.
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+### Step 2
+Next, I manually (and somewhat painstakingly) searched through the actual reviews for clues. In some cases, Pitchfork are very explicit about the genre being reviwed, but in other cases not so much. For the latter, I searched other review sites, to find the best possible consensus. I coded each genre at the most specific level possible, initially (*e.g.* if Pitchfork described something as 'deep house', it got labeleled as such, as opposed to somethig more generic like 'dance'. This approach resulted in 173 genres!
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+### Step 3
+Lastly, any genres that accounted for < 1% of the sample were either:
 
-```{r cars}
-summary(cars)
-```
+A) reclassified at a higher level (*e.g.* death metal, black metal *etc.* become 'extreme metal'), or 
+B) excluded from the dataset (e.g. spoken word, comedy, classical).
 
-## Genre Plots
+The reason for this approach was, in a sense, to assume nothing about the genres to begin with -- to let the data decide which genres the reviews should be split into.
+
+## Genre counts
+
+Once everything had been tagged, I was left with 39 genres:
+
+![center](C:\Users\megaw_000\Documents\GitHub\megawalrus.github.io\figs\genre_counts.png)
+
+## Genre mean scores
 
 Here's a plot of mean scores by genre:
 
 ![center](C:\Users\megaw_000\Documents\GitHub\megawalrus.github.io\figs\genre_mean_scores.png)
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
