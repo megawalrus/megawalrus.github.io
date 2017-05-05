@@ -29,14 +29,23 @@ B) excluded from the dataset (e.g. spoken word, comedy, classical).
 
 The reason for this approach was, in a sense, to assume nothing about the genres to begin with -- to let the data decide which genres the reviews should be split into.
 
-## Genre counts
+## Which musical genres does Pitchfork review the most?
 
 Once everything had been tagged, I was left with 39 genres:
 
 ![center](C:\Users\megaw_000\Documents\GitHub\megawalrus.github.io\figs\genre_counts.png)
+Given Pitchfork's reputation as primarily an Indie music magazine, it's unsurprising that Indie rock tops the list by some way, with Indie pop also in third position. Hip-hop is the second-most reviewed genre by Pitchfork, which is maybe slightly surprising. Elsewhere, the range of genres being reviewed is reasonably diverse, and Pitchfork are reviewing a lot more Country than I'd realised.
+
+### Has this changed over time?
+
+Next, I wanted to take a look at how Pitchfork's reviewing habits might have changed over time, by looking at the most frequently reviewed genres on a year-by-year basis:
+
+![center](C:\Users\megaw_000\Documents\GitHub\megawalrus.github.io\figs\genre_counts_over_time.png)
+Between 1999-2011, Indie rock was the msot reviewed genre by Pitchfork.
 
 ## Genre mean scores
 
 Here's a plot of mean scores by genre:
 
 ![center](C:\Users\megaw_000\Documents\GitHub\megawalrus.github.io\figs\genre_mean_scores.png)
+
