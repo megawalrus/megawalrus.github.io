@@ -1,7 +1,7 @@
 ---
 title: "Examining trends in popular music criticism using the 'Pitchfork database'"
 author: "Tim Metcalfe"
-date: "3 May 2017"
+date: "6 May 2017"
 output: html_document
 ---
 
@@ -12,6 +12,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Introduction
 
 Reviewers exert great influence on the consumption of contemporary popular music. For example, the 'Pitchfork effect' -- named after the [hugely popular online music magazine](http://pitchfork.com) -- refers to the tendency for sales to increase immediately after acclaim by a well-known reviewer. Therefore, it is worthwhile to understand, in-depth, any potential trends and biases in critical opinion. Recently, an [SQL database was compiled](https://github.com/nsgrantham/pitchfork-reviews), containing over 17,000 music reviews published by Pitchfork between 1999 and 2016. This dataset offered a unique opportunity to study differences in critical opinion, both as a function of time and of different individual reviewers. However, no information about musical genre was included, which could be highly informative with respect to highlighting more overarching trends and/or biases in reviews. To this end, I began updating the 'Pitchfork database' by adding genre labels for each review, to allow for some additional analyses.
+
+**DISCLAIMER:** the data here are based on only half of the Pitchfork database (~8,000 reviews). Tagging each album reviewed by musical genre turned out to be quite an arduous process, and as such I haven't finished doing it just yet. Accordingly, my interpretations of the visualizations below are somewhat speculative...
 
 ## Updating the Pitchfork database
 
@@ -70,5 +72,34 @@ Lastly, let's explore the changing fates of different musical genres over the ye
 ![center](C:\Users\megaw_000\Documents\GitHub\megawalrus.github.io\figs\best_genres_over_time.png)
 The most immediately obvious trend, when looking at this graph, is that there seems to be a 'regression to the (overall) mean' over time. That is, even though the overall mean score has stayed around 7.0 over the years, the very highest rated genres have become less highly-rated over time. This probably means that any preferences that Pitchfork did have for specific genres has become less pronounced over time -- consistent with the publication reviewing increasingly diverse material. As Pitchfork reviews more albums from each genre over time, it becomes increasingly unlikely that any one genre will receive an inflated overall rating, based on one or two rave reviews.
 
+Looking at individual genres, it's clear that the high average scores awarded to World and Jazz music have been fairly consistent over time. I think this is most likely because, even though Pitchfork is clearly becoming more diverse, these genres are still clearly not its main focus, and therefore still to tend to mostly get reviewed when particularly exceptional or noteworthy albums come along.
 
+There are also a couple of appearances here by genres that are among the least well-reviewed, on the whole. For example, Pop-rock was the third-best-reviewed genre in 2012, despite being the second-worst reviewed genre overall. I think this illustrates that, though Pitchfork clearly has its preferences genre-wise, these are not immutable by any means. Similarly, despite poor overall performance, Hard rock/ heavy metal had a good showing in 2007 and 2010. A sensible explanation for this effect might be that Pitchfork's preferences and biases are geared more towards musical 'movements' than genres *per se*. For example, its likely that Pitchfork's apparent disdain for Hard rock/ heavy metal is actually driven by a dislike of the genre's early 2000s manifestation -- namely, the [critically-derided Nu-metal/ Rap-rock](http://www.nme.com/blogs/nme-blogs/10-reasons-why-nu-metal-was-the-worst-genre-of-all-time-764675).
+
+### The worst-reviewed genres, over time
+
+Finally, let's look at how Pithfork's least favourite genres have changed over the years:
+
+![center](C:\Users\megaw_000\Documents\GitHub\megawalrus.github.io\figs\worst_genres_over_time.png)
+Looking at this graph, it's obvious that R&B had a tough time in 2004! Secondly, we can see the same trend as in the previous graph, albeit in reverse. That is, even the genres that receive the lowest reviews on average have gradually been receiving higher scores over time.
+
+As in the previous graph, there are also biases that have endured over time. The clearest example in this case is Alt rock -- the worst reviewed genre overall, and also making the bottom three in 2000, 2005, 2008, 2009, 2010, 2012, 2013 and 2014. By comparison, Hard rock/ heavy metal has fared a little better, gradually improving between 2001-2008, at not appearing in the bottom three since. This supports my earlier suggestion -- as the genre moved away from the Nu-metal sound that dominated the early 2000s, Pitchfork's appraisal of the genre steadily improved.
+
+As for R&B's abysmal showing in 2004 -- a similar principle might apply. This genre had heavily infiltrated the mainstream around the early 2000s, and Pitchfork apparently did not enjoy this type of radio-friendly R&B. From the mid-to-late 2000s and beyond, [the rise of 'Alternative R&B'](https://www.theguardian.com/music/2015/jun/29/how-r-b-got-its-groove-back) has perhaps led to Pichfork having a more favourable opinion of the genre.
+
+## Some (brief) conclusions...
+
+Even though I analysed approximately 8,000 reviews, I'll refrain from drawing any strong conclusions until I've tagged the entire dataset. With that said, there's definitely evidence (as you'd expect) that Pitchfork reviews some genres more frequently than others. What is a little surprising is that, as of 2012, the most reviewed genre has been Hip-hop. It'll be interesting to see whether or not this trend continues, once we have data from 2016-2017 to look at...
+
+Secondly, it does appear that Pitchfork might have general (fairly subtle) preferences for some genres over others. Based on the data observed so far, the clearest examples are:
+
+A) World and Jazz music are usually very well-reviewed, relative to other genres
+B) Alt rock has very consistently received below average reviews
+C) Less clearly 'mainstream' genres (e.g. Experimental) seem to be slightly preferred on the whole, and vice versa
+
+Lastly however, I think that discussing reviewing preferences in reference to musical genre might be something of an oversimplification. While there may be cases in which an entire genre is liked/ disliked more than others, it might make more sense to instead talk about musical 'movements' or 'scenes'. Therefore, rather than making a blanket statement like "Pitchfork does not like Hard rock/ heavy metal" we might instead say that Pitchfork did not enjoy the particular style of Hard rock/ heavy metal that was prevalent in the mainstream in the early 2000s. In summary, we can probably understand a lot more about reviewing biases if we take into account not just the musical genre being reviewed, but its interaction both with time, and with the cultural 'mainstream'.
+
+In the near future (assuming that anyone is interested), I'll aim to finish tagging the entire database, and will then update this post, maybe with some more sophisticated analyses, too.
+
+**This project owes a huge debt to the work of [Neal Grantham](https://nsgrantham.github.io/), whose post ['Who Reviews the Pitchfork Reviewers?'](http://nsgrantham.github.io/pitchfork-reviews/) gave me the inspiration to carry it out.**
 
