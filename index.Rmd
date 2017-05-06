@@ -1,13 +1,5 @@
 ---
 title: "Examining trends in popular music criticism using the 'Pitchfork database'"
-author: "Tim Metcalfe"
-date: "6 May 2017"
-#output: html_document
-output:
-  html_document:
-    self_contained: false
-    
-comments:true
 ---
 
 ```{r setup, include=FALSE}
