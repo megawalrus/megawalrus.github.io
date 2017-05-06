@@ -38,14 +38,37 @@ Given Pitchfork's reputation as primarily an Indie music magazine, it's unsurpri
 
 ### Has this changed over time?
 
-Next, I wanted to take a look at how Pitchfork's reviewing habits might have changed over time, by looking at the most frequently reviewed genres on a year-by-year basis:
+Next, I wanted to take a look at how Pitchfork's reviewing habits might have changed over time, by looking at the most frequently reviewed genres on a year-by-year basis. For the sake of simplicity, this plot shows only the top three most-reviewed genres for each year:
 
 ![center](C:\Users\megaw_000\Documents\GitHub\megawalrus.github.io\figs\genre_counts_over_time.png)
-Between 1999-2011, Indie rock was the msot reviewed genre by Pitchfork.
+Between 1999-2011, Indie rock was the most reviewed genre by Pitchfork -- no suprises there. BUt, since 2012, they've reviewed more Hip-hop than anything else, and in fact this difference still seems to be increasing. Is it time that we started referring to Pitchfork as primarily a Hip-hop publication? Or maybe this swing is reflective of a wider cultural trend -- arguably Hip-hop has moved towards the forefront of popular music consciousness in recent years, analogously to the [proliferation of Indie rock and Post-punk revival in the early 2000s](http://pitchfork.com/features/article/7704-the-decade-in-indie/). Or maybe it has more to do with Hip-hop's affinity for the mixtape, a medium that meets ["consumer demand for free, original rap music"](http://www.billboard.com/biz/articles/news/1168371/the-economy-of-mixtapes-how-drake-wiz-khalifa-big-krit-figured-it-out), and that naturally results in a plethora of Independent releases for Pitchfork to review?
 
-## Genre mean scores
+Elsewhere, it looks like Indie pop fell out of favour slightly too around 2012, while electronic music peaked from 1999-2003 -- coinciding roughly with a time that so-called ['Intelligent Dance Music](http://pitchfork.com/features/lists-and-guides/10011-the-50-best-idm-albums-of-all-time/) was enjoying a degree of popularity.
 
-Here's a plot of mean scores by genre:
+## What scores does Pitchfork assign?
+
+Of course, Pitchfork has become well-known for its numerical scores that are assigned to reviewed albums -- each review is accompanied by a score ranging anywhere from the infamous 0.0 to the coveted 10.0. First, let's take a look at how Pitchfork tends to review albums, on the whole:
+
+![center](C:\Users\megaw_000\Documents\GitHub\megawalrus.github.io\figs\overall_score_histogram.png)
+The overall score data are left-skewed, with a mean of 7.0, implying a bias towards giving more positive reviews (assuming that, without any bias, the mean score would be 5.0). The most obvious explanation for this is a [positive bias in popular music criticism more generally](http://www.popmatters.com/post/the-bias-toward-positive-reviews/). Anecdotally, it also seems that Pitchfork review quite extensively the discographies of artists that they like, whilst generally avoiding repeatedly panning disliked artists. Although I haven't included the graph here, average scores have very consistentlty hovered around the 7.0 mark, over the years.
+
+## Which genres does Pitchfork tend to rate most highly?
+
+So, on to perhaps the most interesting question: are there any musical genres that Pitchfork consistently reviews more highly than others?
 
 ![center](C:\Users\megaw_000\Documents\GitHub\megawalrus.github.io\figs\genre_mean_scores.png)
+While most genres tend to score around the 7.0 mark on average, there's clearly some variability here. At the top, perhaps a bit surprisingly, are World and Jazz. I would guess that the reason for this is that Pitchfork reviews these genres relatively rarely (as we saw from the first graph). Therefore, when they *do* review them, it's likely because the album in question is particularly high-quality or otherwise noteworthy, thereby inflating the average score for these genres. At the other end of the scale, it's not too surprising to see Pop rock and Power pop hanging out, since Pitchfork has a reputation for eschewing these 'poppier' genres. Alt rock being the least well-reviewed genre might come as something of a surprise, though. The trouble with the 'Alt rock' label is that it's been used to refer to drastically different styles of music, across different decades -- I'm fairly confident that the brand of Alt rock maligned here is the work of poppier end of the spectrum, exemplified by Keane *et al.* as opposed to, say, Sonic Youth.
+
+As might be expected, Experimental music and all of its hybrid genres (Experimental rock, Experimental electronic *etc.*) tended to score above average. One might assume that these genres would have the most variance in scores (since experimentation naturally leads to inconsistent or at least unpredictable results). If this is the case, then Pitchfork appears to prize experimentation quite highly, and perhaps punishes musical 'blandness' with lower scores than music which is artistically ambitious but flawed in execution. Of course, it might just be the case that labels like 'Experimental' and 'Art' music lead to a positively biased appraisal of a work's artistic value.
+
+Also of interest, is that Heavy metal scores relatively poorly, whereas Extreme metal seems to fare much better. Could this be because, within this genre, there's a [tendency to equate extremeness with authenticity](https://www.degruyter.com/view/j/comm.2014.39.issue-2/commun-2014-0010/commun-2014-0010.xml), and therefore artistic value? Or perhaps it's simply because Heavy metal and Hard rock are perceived as more 'mainstream'? Either way, this discrepancy highlights the importance of assigning musical genres based on what actually emerged from the data, as opposed to assuming a list of genres to begin with. The latter approach would likely have used far fewer genre categories, thereby missing interesting nuances such as the aforementioned.
+
+## Have Pitchfork's favourite/ least favourite genres changed over time?
+
+Lastly, let's explore the changing fates of different musical genres over the years. These two graphs show, respectively, the top three best- and least-well-reviewed genres for each year.
+
+![center](C:\Users\megaw_000\Documents\GitHub\megawalrus.github.io\figs\best_genres_over_time.png)
+The most immediately obvious trend, when looking at this graph, is that there seems to be a 'regression to the (overall) mean' over time. That is, even though the overall mean score has stayed around 7.0 over the years, the very highest rated genres have become less highly-rated over time. This probably means that any preferences that Pitchfork did have for specific genres has become less pronounced over time -- consistent with the publication reviewing increasingly diverse material. As Pitchfork reviews more albums from each genre over time, it becomes increasingly unlikely that any one genre will receive an inflated overall rating, based on one or two rave reviews.
+
+
 
