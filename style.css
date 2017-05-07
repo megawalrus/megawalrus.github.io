@@ -14,7 +14,6 @@ p {
 	text-align:justify;
 	font-family: Helvetica, Arial, sans-serif;
 	margin: 3% 30% 3% 30%;
-	min-width: 300px;
 }
 
 h1, h2, h3 {
@@ -28,7 +27,5 @@ h1 {
 
 img {
 	max-width: 99%;
-	max-height: 99%
-	min-width: 99%;
-	min-height: 99%;	
+	max-height: 99%	
 }
