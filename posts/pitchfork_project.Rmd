@@ -78,7 +78,7 @@ Also of interest, is that Heavy metal scores relatively poorly, whereas Extreme 
 
 ## Have Pitchfork's favourite/ least favourite genres changed over time?
 
-Lastly, let's explore the changing fates of different musical genres over the years. These two graphs show, respectively, the top three best- and least-well-reviewed genres for each year.
+Lastly, let's explore the changing fates of different musical genres over the years. These two graphs show, respectively, the top three best- and least-well-reviewed genres for each year:
 
 ![](figs/best_genres_over_time.png)\
 
@@ -118,3 +118,4 @@ In the near future (assuming that anyone is interested), I'll aim to finish tagg
 
 **This project owes a huge debt to the work of [Neal Grantham](https://nsgrantham.github.io/), whose post ['Who Reviews the Pitchfork Reviewers?'](http://nsgrantham.github.io/pitchfork-reviews/) gave me the inspiration to carry it out.**
 
+### [Back](https://megawalrus.github.io/)
