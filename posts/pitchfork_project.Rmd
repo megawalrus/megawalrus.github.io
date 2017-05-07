@@ -118,4 +118,4 @@ In the near future (assuming that anyone is interested), I'll aim to finish tagg
 
 **This project owes a huge debt to the work of [Neal Grantham](https://nsgrantham.github.io/), whose post ['Who Reviews the Pitchfork Reviewers?'](http://nsgrantham.github.io/pitchfork-reviews/) gave me the inspiration to carry it out.**
 
-### [Back](https://megawalrus.github.io/)
+### [Home](https://megawalrus.github.io/)
