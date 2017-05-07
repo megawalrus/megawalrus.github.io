@@ -125,35 +125,37 @@ $(document).ready(function () {
 
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>Reviewers exert great influence on the consumption of contemporary popular music. For example, the ‘Pitchfork effect’ – named after the <a href="http://pitchfork.com">hugely popular online music magazine</a> – refers to the tendency for sales to increase immediately after acclaim by a well-known reviewer. Therefore, it is worthwhile to understand, in-depth, any potential trends and biases in critical opinion. Recently, an <a href="https://github.com/nsgrantham/pitchfork-reviews">SQL database was compiled</a>, containing over 17,000 music reviews published by Pitchfork between 1999 and 2016. This dataset offered a unique opportunity to study differences in critical opinion, both as a function of time and of different individual reviewers. However, no information about musical genre was included, which could be highly informative with respect to highlighting more overarching trends and/or biases in reviews. To this end, I began updating the ‘Pitchfork database’ by adding genre labels for each review, to allow for some additional analyses.</p>
+<p>Reviewers exert great influence on the consumption of contemporary popular music. For example, the ‘Pitchfork effect’ – named after the <a href="http://pitchfork.com">hugely popular online music magazine</a> – refers to the tendency for sales to increase immediately after acclaim by a well-known reviewer. Therefore, it is worthwhile to understand, in-depth, any potential trends and biases in critical opinion. Recently, an <a href="https://github.com/nsgrantham/pitchfork-reviews">SQL database</a> was compiled, containing over 17,000 music reviews published by Pitchfork between 1999 and 2016. This dataset offered a unique opportunity to study differences in critical opinion, both as a function of time and of different individual reviewers. However, no information about musical genre was included, which might be highly informative with respect to highlighting more overarching trends and biases in reviews. To this end, I began updating the ‘Pitchfork database’ by adding genre labels for each review, to allow for some additional analyses.</p>
 <p><strong>DISCLAIMER:</strong> the data here are based on only half of the Pitchfork database (~8,000 reviews). Tagging each album reviewed by musical genre turned out to be quite an arduous process, and as such I haven’t finished doing it just yet. Accordingly, my interpretations of the visualizations below are somewhat speculative…</p>
 </div>
 <div id="updating-the-pitchfork-database" class="section level2">
 <h2>Updating the Pitchfork database</h2>
 <div id="step-1" class="section level3">
 <h3>Step 1</h3>
-<p>Initially, (and somewhat naively), I built a web scraper with <code>Python</code>, to search for each album’s genre online and download the result. While this did help provide a ‘first guess’ at the genre, the approach was fraught with errors, and lots of albums were too obscure to be found using this method.</p>
+<p>Initially, (and somewhat naively), I built a web scraper with <code>Python</code> to search for each album’s genre online and download the result. While this did help provide a ‘first guess’ at the genre, the approach was fraught with errors, and lots of albums were too obscure to be found using this method.</p>
 </div>
 <div id="step-2" class="section level3">
 <h3>Step 2</h3>
-<p>Next, I manually (and somewhat painstakingly) searched through the actual reviews for clues. In some cases, Pitchfork are very explicit about the genre being reviwed, but in other cases not so much. For the latter, I searched other review sites, to find the best possible consensus. I coded each genre at the most specific level possible, initially (<em>e.g.</em> if Pitchfork described something as ‘deep house’, it got labeleled as such, as opposed to somethig more generic like ‘dance’. This approach resulted in 173 genres!</p>
+<p>Next, I manually (and somewhat painstakingly) searched through the actual reviews for clues. In some cases, Pitchfork are very explicit about the genre being reviwed, but in other cases not so much. For the latter, I searched other review sites, to find the best possible general consensus. Sites like <a href="http://www.allmusic.com/">Allmusic</a>, <a href="https://www.discogs.com/search/">Discogs</a> <em>etc.</em> were helpful here, and in semi-rare cases, the artists own websites were kind enough to identify their genre.</p>
+<p>I coded each genre at the most specific ‘level’ possible, initially, For example, if Pitchfork described something as ‘deep house’, it got labelelled as such, as opposed to something more generic like ‘dance’. This approach resulted in a total of 173 genres, from household names like House and Indie rock, to the more niche sounds of Footwork and Blackgaze.</p>
 </div>
 <div id="step-3" class="section level3">
 <h3>Step 3</h3>
 <p>Lastly, any genres that accounted for &lt; 1% of the sample were either:</p>
 <ol style="list-style-type: upper-alpha">
-<li>reclassified at a higher level (<em>e.g.</em> death metal, black metal <em>etc.</em> become ‘extreme metal’), or</li>
-<li>excluded from the dataset (e.g. spoken word, comedy, classical).</li>
+<li>reclassified at a higher level (<em>e.g.</em> death metal, black metal <em>etc.</em> became ‘Extreme metal’), or</li>
+<li>excluded from the dataset, if the above was not possible (e.g. spoken word, comedy, classical).</li>
 </ol>
-<p>The reason for this approach was, in a sense, to assume nothing about the genres to begin with – to let the data decide which genres the reviews should be split into.</p>
+<p>The reason for this approach was, in a sense, to assume nothing about the genres to begin with – to let the data decide which genres the reviews should be split into. This also means that, for the remaining genres, there are hopefully enough exemplars in the database from which to draw meaningful conclusions, <em>i.e.</em> we wwon’t end up trying to comment upon how a genre is reviewed, based on only one or two albums.</p>
 </div>
 </div>
 <div id="which-musical-genres-does-pitchfork-review-the-most" class="section level2">
 <h2>Which musical genres does Pitchfork review the most?</h2>
-<p>Once everything had been tagged, I was left with 39 genres:</p>
+<p>Once everything had been tagged and reclassified, 39 genres were left:</p>
 <p><img src="figs/genre_counts.png" /><br />
 </p>
-<p>Given Pitchfork’s reputation as primarily an Indie music magazine, it’s unsurprising that Indie rock tops the list by some way, with Indie pop also in third position. Hip-hop is the second-most reviewed genre by Pitchfork, which is maybe slightly surprising. Elsewhere, the range of genres being reviewed is reasonably diverse, and Pitchfork are reviewing a lot more Country than I’d realised.</p>
+<p>Given Pitchfork’s reputation as primarily an Indie music publication, it’s unsurprising that Indie rock tops the list by some way, with Indie pop also occupying third position. Hip-hop is the second-most commonly reviewed genre by Pitchfork, which is maybe slightly more of a surprise. Elsewhere, the range of genres being reviewed is reasonably diverse, and Pitchfork are reviewing a lot more Country than I’d realised (I think we have a tendency to underestimate the popularity of Country, here in the UK).</p>
+<p>With that said, the relationship between a genre’s general popularity and its prevalence in Pitchfork is far from linear. Experimental music, Extreme metal and Alternative hip hop, for example, are all more frequently reviewed than Pop music.</p>
 <div id="has-this-changed-over-time" class="section level3">
 <h3>Has this changed over time?</h3>
 <p>Next, I wanted to take a look at how Pitchfork’s reviewing habits might have changed over time, by looking at the most frequently reviewed genres on a year-by-year basis. For the sake of simplicity, this plot shows only the top three most-reviewed genres for each year:</p>
@@ -209,8 +211,8 @@ $(document).ready(function () {
 <p>Lastly however, I think that discussing reviewing preferences in reference to musical genre might be something of an oversimplification. While there may be cases in which an entire genre is liked/ disliked more than others, it might make more sense to instead talk about musical ‘movements’ or ‘scenes’. Therefore, rather than making a blanket statement like “Pitchfork does not like Hard rock/ heavy metal” we might instead say that Pitchfork did not enjoy the particular style of Hard rock/ heavy metal that was prevalent in the mainstream in the early 2000s. In summary, we can probably understand a lot more about reviewing biases if we take into account not just the musical genre being reviewed, but its interaction both with time, and with the cultural ‘mainstream’.</p>
 <p>In the near future (assuming that anyone is interested), I’ll aim to finish tagging the entire database, and will then update this post, maybe with some more sophisticated analyses, too.</p>
 <p><strong>This project owes a huge debt to the work of <a href="https://nsgrantham.github.io/">Neal Grantham</a>, whose post <a href="http://nsgrantham.github.io/pitchfork-reviews/">‘Who Reviews the Pitchfork Reviewers?’</a> gave me the inspiration to carry it out.</strong></p>
-<div id="back" class="section level3">
-<h3><a href="https://megawalrus.github.io/">Back</a></h3>
+<div id="back-to-home" class="section level3">
+<h3><a href="https://megawalrus.github.io/">Back to Home</a></h3>
 </div>
 </div>
 
